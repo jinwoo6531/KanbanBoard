@@ -97,7 +97,8 @@ const styles = {
     formButtonGroup : {
         marginTop: 8,
         display: "flex",
-        alignItems: 'center'
+        alignItems: 'center',
+        border:'1px solid red'
     }
 }
 
