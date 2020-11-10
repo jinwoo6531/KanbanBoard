@@ -1,24 +1,32 @@
-import React from 'react'
+import React from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
+import { Draggable } from 'react-beautiful-dnd';
 
-function TrelloCard({ text }) {
-    return (
-        <Card style={styles.cardContainer}>
+const TrelloCard = ({ text, id, index }) => {
+  return (
+    <Draggable draggableId={String(id)} index={index}>
+      {(provided) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <Card style={styles.cardContainer}>
             <CardContent>
-            <Typography gutterBottom>
-                {text}
-            </Typography>
+              <Typography gutterBottom>{text}</Typography>
             </CardContent>
-        </Card>
-    )
-}
+          </Card>
+        </div>
+      )}
+    </Draggable>
+  );
+};
 const styles = {
-    cardContainer : {
-        marginBottom: 13,
-        width:"99%",
-        
-    }
-}
-export default TrelloCard
+  cardContainer: {
+    marginBottom: 13,
+    width: '99%',
+  },
+};
+export default TrelloCard;

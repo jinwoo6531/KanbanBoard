@@ -1,8 +1,8 @@
-import {CONSTANTS} from './index';
+import { CONSTANTS } from './index';
 
 export const addList = (title) => {
-    return {
-        type: CONSTANTS.ADD_LIST,
-        payload:title
-    }
-}
+  return {
+    type: CONSTANTS.ADD_LIST,
+    payload: title,
+  };
+};
